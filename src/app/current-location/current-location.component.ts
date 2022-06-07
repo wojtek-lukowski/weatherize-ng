@@ -84,27 +84,13 @@ export class CurrentLocationComponent implements OnInit {
 
   openHourlyDataDialog(
     location: string,
-    country: string,
-    temperature: any,
-    sky: string,
-    feelsLike: any,
-    tempMax: any,
-    tempMin: any,
-    windSpeed: any,
-    windDirection: any
+    country: string
     ): void {
     console.log(this.location);
     this.dialog.open(HourlyDataComponent, {
       data: {
         location,
-        country,
-        temperature,
-        sky,
-        feelsLike,
-        tempMax,
-        tempMin,
-        windSpeed,
-        windDirection
+        country
       },
       width: '600px'
     });
@@ -120,12 +106,40 @@ export class CurrentLocationComponent implements OnInit {
     })
   }
 
-  showDetails(location: string): void {
+  // showDetails(location: string): void {
+  //   this.dialog.open(DetailsComponent, {
+  //     data: {
+  //       location
+  //     }
+  //   })
+  // }
+
+  showDetails(
+    location: string,
+    country: string,
+    temperature: any,
+    sky: string,
+    feelsLike: any,
+    tempMax: any,
+    tempMin: any,
+    windSpeed: any,
+    windDirection: any
+    ): void {
+    console.log(this.location);
     this.dialog.open(DetailsComponent, {
       data: {
-        location
-      }
-    })
+        location,
+        country,
+        temperature,
+        sky,
+        feelsLike,
+        tempMax,
+        tempMin,
+        windSpeed,
+        windDirection
+      },
+      width: '600px'
+    });
   }
 
 
