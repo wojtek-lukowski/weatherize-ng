@@ -24,10 +24,10 @@ export class AppComponent {
     // public dialog: MatDialog
   ) { }
 
-  test(): void {
-    console.log('where is the window?')
-    //   this.dialog.open(HourlyDataComponent, {
-    //     width: '600px'
-    //   })
-  }
+  // test(): void {
+  //   console.log('where is the window?')
+  //   //   this.dialog.open(HourlyDataComponent, {
+  //   //     width: '600px'
+  //   //   })
+  // }
 }

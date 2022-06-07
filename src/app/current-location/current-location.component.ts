@@ -48,7 +48,7 @@ export class CurrentLocationComponent implements OnInit {
   }
 
   openHourlyDataDialog(): void {
-    console.log('tu mialo byc otwarte okno');
+    console.log('should open dialog window');
     // this.dialog.open(HourlyDataComponent, {
     //   width: '600px'
     // });
