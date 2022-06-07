@@ -1,0 +1,21 @@
+<div (click)="openHourlyDataDialog()">
+
+  <p *ngIf="!latitude">Locating...</p>
+  <p *ngIf="latitude">Your current location:</p>
+  <p *ngIf="latitude">latitude:
+    {{latitude}}
+  </p>
+
+  <p *ngIf="longitude">longitude:
+    {{longitude}}
+  </p>
+
+  <p *ngIf="location" style="font-weight: bold">
+    {{location}}, {{country}}
+  </p>
+
+  <p *ngIf="temperature" style="font-size: 30px; font-weight: bold">
+    {{temperature}} C°
+  </p>
+
+</div>
