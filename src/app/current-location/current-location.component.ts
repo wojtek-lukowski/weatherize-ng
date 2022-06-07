@@ -21,7 +21,7 @@ export class CurrentLocationComponent implements OnInit {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    // public dialog: MatDialog
+    public dialog: MatDialog
     // public snackBar: MatSnackBar,
   ) { }
 
@@ -47,11 +47,14 @@ export class CurrentLocationComponent implements OnInit {
     }
   }
 
-  openHourlyDataDialog(): void {
+  openHourlyDataDialog(name: string): void {
     console.log('should open dialog window');
-    // this.dialog.open(HourlyDataComponent, {
-    //   width: '600px'
-    // });
+    this.dialog.open(HourlyDataComponent, {
+      data: {
+        name
+      },
+      width: '600px'
+    });
   }
 
 

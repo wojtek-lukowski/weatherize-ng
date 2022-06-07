@@ -1,4 +1,4 @@
-<div (click)="openHourlyDataDialog()">
+<div>
 
   <p *ngIf="!latitude">Locating...</p>
   <p *ngIf="latitude">Your current location:</p>
@@ -18,6 +18,6 @@
     {{temperature}} C°
   </p>
 
-  <button (click)="openHourlyDataDialog()">More</button>
+  <button (click)="openHourlyDataDialog(location)">More</button>
 
 </div>
