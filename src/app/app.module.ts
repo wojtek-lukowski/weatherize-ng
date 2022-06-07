@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CurrentLocationComponent } from './current-location/current-location.component';
 import { HourlyDataComponent } from './hourly-data/hourly-data.component';
 import { TemperatureComponent } from './temperature/temperature.component';
-// import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -19,14 +20,15 @@ import { TemperatureComponent } from './temperature/temperature.component';
     DashboardComponent,
     CurrentLocationComponent,
     HourlyDataComponent,
-    TemperatureComponent
+    TemperatureComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    // MatDialog
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

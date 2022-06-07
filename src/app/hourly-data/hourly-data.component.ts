@@ -11,7 +11,8 @@ export class HourlyDataComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      location: string
+      location: string,
+      country: string
     }) { }
 
   ngOnInit(): void {
