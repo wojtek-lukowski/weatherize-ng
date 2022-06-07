@@ -1,18 +1,20 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+
 @Component({
-  selector: 'app-hourly-data',
-  templateUrl: './hourly-data.component.html',
-  styleUrls: ['./hourly-data.component.css']
+  selector: 'app-temperature',
+  templateUrl: './temperature.component.html',
+  styleUrls: ['./temperature.component.css']
 })
-export class HourlyDataComponent implements OnInit {
+export class TemperatureComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      location: string
-    }) { }
+      temperature: number
+    }
+  ) { }
 
   ngOnInit(): void {
   }

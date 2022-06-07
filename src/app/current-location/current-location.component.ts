@@ -3,8 +3,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { Observable, throwError } from 'rxjs';
 import { HourlyDataComponent } from '../hourly-data/hourly-data.component';
 import { MatDialog } from '@angular/material/dialog';
-
-// import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TemperatureComponent } from '../temperature/temperature.component';
 
 @Component({
   selector: 'app-current-location',
@@ -21,7 +21,7 @@ export class CurrentLocationComponent implements OnInit {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
     // public snackBar: MatSnackBar,
   ) { }
 
@@ -47,15 +47,26 @@ export class CurrentLocationComponent implements OnInit {
     }
   }
 
-  openHourlyDataDialog(name: string): void {
-    console.log('should open dialog window');
-    this.dialog.open(HourlyDataComponent, {
-      data: {
-        name
-      },
-      width: '600px'
-    });
+  openHourlyDataDialog(location: string): void {
+    console.log(this.location);
+    // this.dialog.open(HourlyDataComponent, {
+    //   data: {
+    //     location
+    //   },
+    //   width: '600px'
+    // });
   }
+
+  openTempDialog(temperature: any): void {
+    console.log(this.temperature);
+    this.dialog.open(TemperatureComponent, {
+      data: {
+        temperature
+      },
+      width: '300px'
+    })
+  }
+
 
 
 }
