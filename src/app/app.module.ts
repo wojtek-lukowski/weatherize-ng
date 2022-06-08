@@ -9,9 +9,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CurrentLocationComponent } from './current-location/current-location.component';
 import { HourlyDataComponent } from './hourly-data/hourly-data.component';
-import { TemperatureComponent } from './temperature/temperature.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DetailsComponent } from './details/details.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -20,7 +20,6 @@ import { DetailsComponent } from './details/details.component';
     DashboardComponent,
     CurrentLocationComponent,
     HourlyDataComponent,
-    TemperatureComponent,
     DetailsComponent
   ],
   imports: [
@@ -28,7 +27,8 @@ import { DetailsComponent } from './details/details.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

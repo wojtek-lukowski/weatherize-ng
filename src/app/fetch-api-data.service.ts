@@ -8,21 +8,9 @@ import { map } from 'rxjs/operators';
 // const key = config.API_KEY;
 const key = '56b8aaad1e7173c8ca01c294273f9bd3';
 
-// async function locate() {
-//   try {
-//     navigator.geolocation.getCurrentPosition((position) => {
-//       this.getCurrent(position.coords.latitude, position.coords.longitude);
-//       localStorage.setItem('latitude', position.coords.latitude);
-//       localStorage.setItem('longitude', position.coords.longitude);
-//     });
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-
 const apiUrl = 'https://weatherize-app.herokuapp.com/';
-// const apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}`;
 const apiUrl2 = `https://api.openweathermap.org/data/2.5/weather`;
+const apiUrl3 = `https://api.openweathermap.org/data/2.5/onecall`;
 @Injectable({
   providedIn: 'root'
 })
@@ -32,29 +20,13 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {
   }
 
-  // async locate() {
-  //   try {
-  //     navigator.geolocation.getCurrentPosition((position) => {
-  //       const lat = position.coords.latitude;
-  //       const lng = position.coords.longitude;
-  //       this.getCurrent(lat, lng);
-  //       // localStorage.setItem('latitude', position.coords.latitude);
-  //       // localStorage.setItem('longitude', position.coords.longitude);
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
-  // public userRegistration
-  //   (userDetails: any): Observable<any> {
-  //   console.log(userDetails);
-  //   return this.http.post(apiUrl + 'users', userDetails).pipe(catchError(this.handleError));
-  // }
-
   getCurrent(lat: any, lng: any): Observable<any> {
     console.log('calling getCurrent');
     return this.http.get(apiUrl2 + `?lat=${lat}&lon=${lng}&appid=${key}`).pipe(catchError(this.handleError));
+  }
+
+  getWeather(lat: any, lng: any): Observable<any> {
+    return this.http.get(apiUrl3 + `?lat=${lat}&lon=${lng}&appid=${key}`).pipe(catchError(this.handleError));
   }
 
   private extractResponseData(res: Response): any {

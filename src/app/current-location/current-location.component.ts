@@ -4,7 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { HourlyDataComponent } from '../hourly-data/hourly-data.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TemperatureComponent } from '../temperature/temperature.component';
 import { DetailsComponent } from '../details/details.component';
 
 @Component({
@@ -82,39 +81,26 @@ export class CurrentLocationComponent implements OnInit {
     }
   }
 
-  openHourlyDataDialog(
+  openHourlyDialog(
     location: string,
-    country: string
+    country: string,
+    latitude: any,
+    longitude: any
     ): void {
     console.log(this.location);
     this.dialog.open(HourlyDataComponent, {
       data: {
         location,
-        country
+        country,
+        latitude,
+        longitude
       },
       width: '600px'
     });
   }
 
-  openTempDialog(temperature: number): void {
-    console.log(this.temperature);
-    this.dialog.open(TemperatureComponent, {
-      data: {
-        temperature
-      },
-      width: '300px'
-    })
-  }
 
-  // showDetails(location: string): void {
-  //   this.dialog.open(DetailsComponent, {
-  //     data: {
-  //       location
-  //     }
-  //   })
-  // }
-
-  showDetails(
+  openDetailsDialog(
     location: string,
     country: string,
     temperature: any,

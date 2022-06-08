@@ -18,9 +18,8 @@
     {{temperature}} C°
   </p>
 
-  <!-- <button (click)="openHourlyDataDialog(location, country)">Location</button> -->
-  <!-- <button (click)="openTempDialog(temperature)">Temperature</button> -->
-  <button (click)="showDetails( location,
+  <button (click)="openDetailsDialog(
+  location,
   country,
   temperature,
   sky,
@@ -29,5 +28,8 @@
   tempMin,
   windSpeed,
   windDirection)">Show details</button>
+  
+  <button (click)="openHourlyDialog(location, country, latitude, longitude)">Hourly</button>
+  <!-- <button (click)="openDailyDialog(location, country)">Daily</button> -->
 
 </div>
