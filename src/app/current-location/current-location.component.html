@@ -10,11 +10,11 @@
     {{longitude}}
   </p> -->
 
-  <p *ngIf="location" style="font-weight: bold">
+  <p *ngIf="location" id="location">
     {{location}}, {{country}}
   </p>
 
-  <p *ngIf="temperature" style="font-size: 30px; font-weight: bold">
+  <p *ngIf="temperature" id="headlines">
     {{temperature}} C° <span>{{sky}}</span>
   </p>
 
@@ -27,7 +27,7 @@
   tempMax,
   tempMin,
   windSpeed,
-  windDirection)">Show details</button>
+  windDirection)">Details</button>
   
   <button (click)="openHourlyDialog(location, country, latitude, longitude)">Hourly</button>
   <button (click)="openDailyDialog(location, country, latitude, longitude)">Daily</button>

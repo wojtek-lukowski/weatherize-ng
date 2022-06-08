@@ -3,14 +3,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatDialog } from '@angular/material/dialog';
 import { HourlyDataComponent } from './hourly-data/hourly-data.component';
 
-
-
-// @NgModule({
-//   declarations: [
-//     DashboardComponent
-//   ]
-// });
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,13 +13,6 @@ export class AppComponent {
   title = 'Weatherize';
 
   constructor(
-    // public dialog: MatDialog
   ) { }
 
-  // test(): void {
-  //   console.log('where is the window?')
-  //   //   this.dialog.open(HourlyDataComponent, {
-  //   //     width: '600px'
-  //   //   })
-  // }
 }

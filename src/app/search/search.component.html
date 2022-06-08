@@ -1,0 +1,34 @@
+
+<div>
+    <label for="location">Check some other places:</label>
+    <input type="text" [(ngModel)]="city" placeholder="Enter new city" (focus)="clearData()">
+    <button type="submit" (click)="getLocationWeather()">Go</button>
+</div>
+
+<div *ngIf="cityCompleted && temperature">
+
+    <p id="location">
+      {{city | uppercase}}, {{country}}
+    </p>
+  
+    <p id="headlines">
+      {{temperature}} C° <span>{{sky}}</span>
+    </p>
+  
+    <!-- <button (click)="openDetailsDialog(
+    location,
+    country,
+    temperature,
+    sky,
+    feelsLike,
+    tempMax,
+    tempMin,
+    windSpeed,
+    windDirection)">Details</button>
+    
+    <button (click)="openHourlyDialog(location, country, latitude, longitude)">Hourly</button>
+    <button (click)="openDailyDialog(location, country, latitude, longitude)">Daily</button> -->
+  
+  </div>
+
+  <div *ngIf="isError">Are you sure about this location?</div>

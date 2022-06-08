@@ -8,9 +8,6 @@ import { map } from 'rxjs/operators';
 // const key = config.API_KEY;
 const key = '56b8aaad1e7173c8ca01c294273f9bd3';
 
-const apiUrl = 'https://weatherize-app.herokuapp.com/';
-const apiUrl2 = `https://api.openweathermap.org/data/2.5/weather`;
-const apiUrl3 = `https://api.openweathermap.org/data/2.5/onecall`;
 @Injectable({
   providedIn: 'root'
 })
@@ -22,11 +19,15 @@ export class FetchApiDataService {
 
   getCurrent(lat: any, lng: any): Observable<any> {
     console.log('calling getCurrent');
-    return this.http.get(apiUrl2 + `?lat=${lat}&lon=${lng}&appid=${key}`).pipe(catchError(this.handleError));
+    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}`).pipe(catchError(this.handleError));
   }
 
   getWeather(lat: any, lng: any): Observable<any> {
-    return this.http.get(apiUrl3 + `?lat=${lat}&lon=${lng}&appid=${key}`).pipe(catchError(this.handleError));
+    return this.http.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&appid=${key}`).pipe(catchError(this.handleError));
+  }
+
+  getCity(city: any): Observable<any> {
+    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`).pipe(catchError(this.handleError));
   }
 
   private extractResponseData(res: Response): any {

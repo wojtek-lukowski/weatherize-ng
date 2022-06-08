@@ -13,6 +13,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DetailsComponent } from './details/details.component';
 import { MatCardModule } from '@angular/material/card';
 import { DailyComponent } from './daily/daily.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { DailyComponent } from './daily/daily.component';
     CurrentLocationComponent,
     HourlyDataComponent,
     DetailsComponent,
-    DailyComponent
+    DailyComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { DailyComponent } from './daily/daily.component';
     BrowserAnimationsModule,
     MatDialogModule,
     MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
