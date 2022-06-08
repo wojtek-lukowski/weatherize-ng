@@ -5,8 +5,8 @@
             <mat-card-title>
                 <p>{{data.location}}, {{data.country}}</p>
             </mat-card-title>
-            <mat-card-content *ngFor="let card of hourlyCards; let i = index">
-                in {{card.time}} hours; temperature:  {{card.temperature}} C°, {{card.sky}}
+            <mat-card-content *ngFor="let card of dailyCards; let i = index">
+                in {{card.time}} days; temperature:  {{card.temperature}} C°, {{card.sky}}
             </mat-card-content> 
             <mat-card-actions>
                 <button [mat-dialog-close]="true">Close</button>

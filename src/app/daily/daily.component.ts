@@ -3,13 +3,13 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
-  selector: 'app-hourly-data',
-  templateUrl: './hourly-data.component.html',
-  styleUrls: ['./hourly-data.component.css']
+  selector: 'app-daily',
+  templateUrl: './daily.component.html',
+  styleUrls: ['./daily.component.css']
 })
-export class HourlyDataComponent implements OnInit {
+export class DailyComponent implements OnInit {
 
-  hourlyCards:Array<any> = [];
+  dailyCards:Array<any> = [];
 
   constructor(
 
@@ -26,10 +26,10 @@ export class HourlyDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchApiData.getWeather(this.data.latitude, this.data.longitude).subscribe((response: any) => {
-      // console.log(response);
-      // console.log(response.hourly);
+      console.log(response);
+      console.log(response.daily);
 
-      for(let i = 0; i < response.hourly.length; i++) {
+      for(let i = 0; i < response.daily.length; i++) {
 
         let card = {
           time: 1,
@@ -38,13 +38,13 @@ export class HourlyDataComponent implements OnInit {
         }
         
         card.time = i + 1;
-        card.temperature = (response.hourly[i].temp - 273.15).toFixed(1);
-        card.sky = response.hourly[i].weather[0].main;
+        card.temperature = (response.daily[i].temp.day - 273.15).toFixed(1);
+        card.sky = response.daily[i].weather[0].main;
 
-        this.hourlyCards.push(card)
+        this.dailyCards.push(card)
       }
 
-      console.log(this.hourlyCards)
+      console.log(this.dailyCards)
 
     });
   }

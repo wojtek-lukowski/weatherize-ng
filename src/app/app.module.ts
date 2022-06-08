@@ -12,6 +12,7 @@ import { HourlyDataComponent } from './hourly-data/hourly-data.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DetailsComponent } from './details/details.component';
 import { MatCardModule } from '@angular/material/card';
+import { DailyComponent } from './daily/daily.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatCardModule } from '@angular/material/card';
     DashboardComponent,
     CurrentLocationComponent,
     HourlyDataComponent,
-    DetailsComponent
+    DetailsComponent,
+    DailyComponent
   ],
   imports: [
     BrowserModule,

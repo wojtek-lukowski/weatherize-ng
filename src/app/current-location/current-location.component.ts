@@ -5,6 +5,7 @@ import { HourlyDataComponent } from '../hourly-data/hourly-data.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DetailsComponent } from '../details/details.component';
+import { DailyComponent } from '../daily/daily.component';
 
 @Component({
   selector: 'app-current-location',
@@ -99,6 +100,23 @@ export class CurrentLocationComponent implements OnInit {
     });
   }
 
+  openDailyDialog(
+    location: string,
+    country: string,
+    latitude: any,
+    longitude: any
+    ): void {
+    console.log(this.location);
+    this.dialog.open(DailyComponent, {
+      data: {
+        location,
+        country,
+        latitude,
+        longitude
+      },
+      width: '600px'
+    });
+  }
 
   openDetailsDialog(
     location: string,

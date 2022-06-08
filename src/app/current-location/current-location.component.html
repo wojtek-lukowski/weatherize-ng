@@ -2,13 +2,13 @@
 
   <p *ngIf="!latitude">Locating...</p>
   <p *ngIf="latitude">Your current location:</p>
-  <p *ngIf="latitude">latitude:
+  <!-- <p *ngIf="latitude">latitude:
     {{latitude}}
   </p>
 
   <p *ngIf="longitude">longitude:
     {{longitude}}
-  </p>
+  </p> -->
 
   <p *ngIf="location" style="font-weight: bold">
     {{location}}, {{country}}
@@ -30,6 +30,6 @@
   windDirection)">Show details</button>
   
   <button (click)="openHourlyDialog(location, country, latitude, longitude)">Hourly</button>
-  <!-- <button (click)="openDailyDialog(location, country)">Daily</button> -->
+  <button (click)="openDailyDialog(location, country, latitude, longitude)">Daily</button>
 
 </div>
