@@ -15,7 +15,7 @@
   </p>
 
   <p *ngIf="temperature" style="font-size: 30px; font-weight: bold">
-    {{temperature}} C°
+    {{temperature}} C° <span>{{sky}}</span>
   </p>
 
   <button (click)="openDetailsDialog(

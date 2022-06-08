@@ -18,7 +18,7 @@ import { HourlyDataComponent } from './hourly-data/hourly-data.component';
 })
 
 export class AppComponent {
-  title = 'weatherize-ng';
+  title = 'Weatherize';
 
   constructor(
     // public dialog: MatDialog

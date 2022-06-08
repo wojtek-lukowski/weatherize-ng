@@ -1,10 +1,21 @@
-<p>{{data.location}}, {{data.country}}</p>
-<p>Temperature: {{data.temperature}} C°</p>
-<p>Sky: {{data.sky}}</p>
-<p>Feels like: {{data.feelsLike}} C°</p>
-<p>Max: {{data.tempMax}} C°</p>
-<p>Min: {{data.tempMin}} C°</p>
-<p>Win speed: {{data.windSpeed}} m/s</p>
-<p>Wind direction: {{data.windDirection}}</p>
+<mat-card>
 
-<button [mat-dialog-close]="true">Close</button>
+    <mat-card-title>
+    {{data.location}}, {{data.country}}
+    </mat-card-title>
+    
+    <ul>
+        <li>Temperature: {{data.temperature}} C°</li>
+        <li>Sky: {{data.sky}}</li>
+        <li>Feels like: {{data.feelsLike}} C°</li>
+        <li>Max: {{data.tempMax}} C°</li>
+        <li>Min: {{data.tempMin}} C°</li>
+        <li>Wind speed: {{data.windSpeed}} m/s</li>
+        <li>Wind direction: {{data.windDirection}}</li>
+    </ul>
+    
+    <mat-card-actions>
+        <button [mat-dialog-close]="true">Close</button>
+    </mat-card-actions>
+    
+</mat-card>
