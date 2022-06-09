@@ -9,7 +9,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class SearchComponent implements OnInit {
 
-  test = 'passing '
+  test: string = 'passed'
   
   city = '';
   cityCompleted = false;
@@ -51,6 +51,11 @@ export class SearchComponent implements OnInit {
     this.city = '';
     this.temperature = '';
     this.sky = '';
+  }
+
+  setCity = (newCity: string) => {
+    this.city = newCity;
+    this.getLocationWeather();
   }
 
 }

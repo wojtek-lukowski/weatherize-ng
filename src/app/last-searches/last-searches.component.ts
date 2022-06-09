@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LastSearchesComponent implements OnInit {
 
   @Input() lastSearches: string[] = [];
-  @Input() test = '';
+  @Input() received = '';
 
   constructor() { }
 
