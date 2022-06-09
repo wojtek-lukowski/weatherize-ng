@@ -31,14 +31,6 @@
   
   </div>
 
-  <div *ngIf="lastSearches.length > 0">
+  <div *ngIf="isError">Sorry, we are not sure abou this location.</div>
 
-      <p>You searched for:</p>
-      <ul class="last-searches">
-          <li *ngFor="search of lastSearches; let i = index" (click)="setCity(lastSearches[i])"><button>{{lastSearches[i] | uppercase}}</button></li>
-        </ul>
-        
-    </div>
-  <!-- <div *ngIf="isError">Are you sure about this location?</div> -->
-
-  <!-- <app-last-searches>[received]="test"</app-last-searches> -->
+  <app-last-searches [lastSearches]="lastSearches" (setCity)="setCity($event)"></app-last-searches>

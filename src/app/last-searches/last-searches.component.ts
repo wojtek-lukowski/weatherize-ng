@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-last-searches',
@@ -8,12 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LastSearchesComponent implements OnInit {
 
   @Input() lastSearches: string[] = [];
-  @Input() received = '';
+  @Output() setCity:EventEmitter<any> = new EventEmitter;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log('searches', this.lastSearches)
+  }
+
+  changeCity = (city: string) => {
+    this.setCity.emit(city)
   }
 
 }

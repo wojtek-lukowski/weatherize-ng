@@ -26,7 +26,7 @@ export class FetchApiDataService {
   }
 
   getCity(city: any): Observable<any> {
-    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`).pipe(catchError(this.handleError));
+    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`);
   }
 
   private extractResponseData(res: Response): any {

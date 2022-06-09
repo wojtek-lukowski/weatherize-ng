@@ -1,7 +1,16 @@
-<p>Your last searches:</p>
 
-<!-- <ul>
-    <li *ngFor="search of lastSearches; let i = index">{{lastSearches[i] | uppercase}}</li>
-</ul> -->
+<div *ngIf="lastSearches.length > 0">
 
-<p>test: {{received}}</p>
+    <p>You searched for:</p>
+
+    <ul class="last-searches">
+      <li *ngFor="search of lastSearches; let i = index" id="clickedCity">
+        <button
+        type="button"
+        (click)="changeCity(lastSearches[i])">
+        {{lastSearches[i] | uppercase}}
+        </button>
+      </li>
+    </ul>
+      
+  </div>
