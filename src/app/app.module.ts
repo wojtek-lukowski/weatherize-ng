@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { DailyComponent } from './daily/daily.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { LastSearchesComponent } from './last-searches/last-searches.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     HourlyDataComponent,
     DetailsComponent,
     DailyComponent,
-    SearchComponent
+    SearchComponent,
+    LastSearchesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,26 +9,35 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class SearchComponent implements OnInit {
 
+  test = 'passing '
+  
   city = '';
   cityCompleted = false;
   country = '';
   temperature = ''
   sky = '';
-  isError = false
-
+  lastSearches: string[] = []
+  // isError = false
+  
   constructor(
     public fetchApiData: FetchApiDataService,
-  ) { }
-
-  ngOnInit(): void {
-  }
+    ) { }
+    
+    ngOnInit(): void {
+      console.log('local storage:', localStorage.getItem('weatherize-lastSearches'))
+      this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]');
+    }
 
   getLocationWeather = () => {
-    this.isError = false
+    if (!this.lastSearches.includes(this.city)) {
+      this.lastSearches.push(this.city);
+      localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches));
+    }
+    console.log(this.lastSearches)
+    // this.isError = false
 
     this.fetchApiData.getCity(this.city).subscribe((response: any) => {
       console.log(response);
-
       this.country = response.sys.country;
       this.temperature = (response.main.temp - 273.15).toFixed(1)
       this.sky = response.weather[0].main
