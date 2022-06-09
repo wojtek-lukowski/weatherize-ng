@@ -26,6 +26,7 @@ export class SearchComponent implements OnInit {
     ngOnInit(): void {
       console.log('local storage:', localStorage.getItem('weatherize-lastSearches'))
       this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]').sort();
+      console.log('test', this.test)
     }
 
   getLocationWeather = () => {
@@ -57,5 +58,6 @@ export class SearchComponent implements OnInit {
     this.city = newCity;
     this.getLocationWeather();
   }
+
 
 }

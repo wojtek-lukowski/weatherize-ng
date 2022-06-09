@@ -35,10 +35,10 @@
 
       <p>You searched for:</p>
       <ul class="last-searches">
-          <button *ngFor="search of lastSearches; let i = index" (click)="setCity(lastSearches[i])">{{lastSearches[i] | uppercase}}</button>
+          <li *ngFor="search of lastSearches; let i = index" (click)="setCity(lastSearches[i])"><button>{{lastSearches[i] | uppercase}}</button></li>
         </ul>
         
     </div>
   <!-- <div *ngIf="isError">Are you sure about this location?</div> -->
 
-  <!-- <app-last-searches>[lastSearches]="lastSearches", [received]="test"</app-last-searches> -->
+  <!-- <app-last-searches>[received]="test"</app-last-searches> -->

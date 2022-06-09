@@ -18,7 +18,6 @@ export class FetchApiDataService {
   }
 
   getCurrent(lat: any, lng: any): Observable<any> {
-    console.log('calling getCurrent');
     return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}`).pipe(catchError(this.handleError));
   }
 
