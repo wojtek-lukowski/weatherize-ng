@@ -29,15 +29,12 @@ export class SearchComponent implements OnInit {
 
   getLocationWeather = () => {
 
+    this.isError = false
     if (!this.lastSearches.includes(this.city) && this.city !==' ') {
       this.lastSearches.push(this.city);
       this.lastSearches.sort();
-      // localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches));
     }
-    console.log(this.lastSearches)
-    this.isError = false
-
-    this.fetchApiData.getCity(this.city).subscribe((response: any) => {
+      this.fetchApiData.getCity(this.city).subscribe((response: any) => {
       console.log(response);
       this.country = response.sys.country;
       this.temperature = (response.main.temp - 273.15).toFixed(1)
