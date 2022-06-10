@@ -28,10 +28,11 @@ export class SearchComponent implements OnInit {
     }
 
   getLocationWeather = () => {
+
     if (!this.lastSearches.includes(this.city) && this.city !==' ') {
       this.lastSearches.push(this.city);
       this.lastSearches.sort();
-      localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches));
+      // localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches));
     }
     console.log(this.lastSearches)
     this.isError = false
@@ -44,11 +45,14 @@ export class SearchComponent implements OnInit {
     },error =>{
     console.error(error);
     this.isError = true;
-    this.lastSearches.pop()
+    this.lastSearches = this.lastSearches.filter( cty => cty !== this.city);
+    // this.lastSearches = this.lastSearches.pop();
+    // this.clearData();
     }, () =>{
       // console.error("complete");
+      this.cityCompleted = true;
+      localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches));
     });
-    this.cityCompleted = true;
   };
 
   clearData = () => {
@@ -57,7 +61,7 @@ export class SearchComponent implements OnInit {
     this.temperature = '';
     this.sky = '';
     this.isError = false;
-    this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]').sort();
+    this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]');
   }
 
   setCity = (newCity: string) => {
