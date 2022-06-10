@@ -17,17 +17,17 @@ export class LastSearchesComponent implements OnInit {
   }
 
   changeCity = (city: string) => {
-    this.setCity.emit(city)
+    this.setCity.emit(city);
   }
 
   removeCity = (city: string) => {
-    console.log('removing', city)
-this.lastSearches.pop()
+    this.lastSearches = this.lastSearches.filter(cty => cty !== city);
+    localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches))
   }
 
   removeAll = () => {
-    this.lastSearches = []
-    localStorage.removeItem('weatherize-lastSearches')
+    this.lastSearches = [];
+    localStorage.removeItem('weatherize-lastSearches');
   }
 
 }
