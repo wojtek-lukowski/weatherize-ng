@@ -31,6 +31,6 @@
   
   </div>
 
-  <div *ngIf="isError">Sorry, we are not sure abou this location.</div>
+  <div class="error-message" *ngIf="isError">Sorry, we are not sure about this location.</div>
 
   <app-last-searches [lastSearches]="lastSearches" (setCity)="setCity($event)"></app-last-searches>

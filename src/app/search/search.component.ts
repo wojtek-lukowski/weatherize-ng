@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
     }
 
   getLocationWeather = () => {
-    if (!this.lastSearches.includes(this.city)) {
+    if (!this.lastSearches.includes(this.city) && this.city !==' ') {
       this.lastSearches.push(this.city);
       localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches));
     }

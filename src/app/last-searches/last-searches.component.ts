@@ -20,4 +20,14 @@ export class LastSearchesComponent implements OnInit {
     this.setCity.emit(city)
   }
 
+  removeCity = (city: string) => {
+    console.log('removing', city)
+this.lastSearches.pop()
+  }
+
+  removeAll = () => {
+    this.lastSearches = []
+    localStorage.removeItem('weatherize-lastSearches')
+  }
+
 }

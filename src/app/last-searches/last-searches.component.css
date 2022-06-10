@@ -8,5 +8,9 @@ li {
 }
 
 button {
-    margin: 10px 10px 0 0
+    margin: 10px 0 0 0
+}
+
+.button-remove {
+    margin-right: 10px;
 }
