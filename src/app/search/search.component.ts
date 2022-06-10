@@ -24,12 +24,13 @@ export class SearchComponent implements OnInit {
     
     ngOnInit(): void {
       console.log('local storage:', localStorage.getItem('weatherize-lastSearches'))
-      this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]').sort();
+      this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]');
     }
 
   getLocationWeather = () => {
     if (!this.lastSearches.includes(this.city) && this.city !==' ') {
       this.lastSearches.push(this.city);
+      this.lastSearches.sort();
       localStorage.setItem('weatherize-lastSearches', JSON.stringify(this.lastSearches));
     }
     console.log(this.lastSearches)
@@ -56,6 +57,7 @@ export class SearchComponent implements OnInit {
     this.temperature = '';
     this.sky = '';
     this.isError = false;
+    this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]').sort();
   }
 
   setCity = (newCity: string) => {

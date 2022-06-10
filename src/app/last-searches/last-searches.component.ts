@@ -14,6 +14,7 @@ export class LastSearchesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // this.lastSearches = JSON.parse(localStorage.getItem('weatherize-lastSearches') || '[]').sort();
   }
 
   changeCity = (city: string) => {
