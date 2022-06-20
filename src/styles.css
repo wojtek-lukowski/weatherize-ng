@@ -11,3 +11,7 @@ mat-card-actions {
 mat-card-title {
     padding-bottom: 25px
 }
+
+button:hover {
+    cursor: pointer;
+}

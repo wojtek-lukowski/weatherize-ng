@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   
   constructor(
     public fetchApiData: FetchApiDataService,
-    ) { }
+    ) {}
     
     ngOnInit(): void {
       console.log('local storage:', localStorage.getItem('weatherize-lastSearches'))
